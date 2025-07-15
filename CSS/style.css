@@ -605,7 +605,7 @@
             border-radius: 4px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             opacity: 0;
-            transform: translateX(50px);
+            transform: translateX(-50px);
             transition: all 0.8s ease;
         }
         
