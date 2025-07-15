@@ -552,7 +552,7 @@
         /* Contact Section */
 
         .map{
-            width: 10px;
+            width: 70vh;
             height: 50vh;
             margin-top: 15px;
         }
@@ -908,6 +908,13 @@
         .section-title h2 {
             font-size: 30px;
         }
+        
+        .map{
+            width: 50%;
+            height: 50vh;
+            margin-top: 15px;
+        }
+
         
         .payment-icons {
             gap: 15px;
