@@ -951,5 +951,11 @@
         .gallery-item {
             width: 90%;
         }
+                
+        .map{
+            width: 100%;
+            height: 50vh;
+            margin-top: 15px;
+        }
     }
     
