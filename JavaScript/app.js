@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
 
     const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.section-title, .about-text, .about-image, .property-item, .service-item, .contact-info, .contact-form, .footer-col, .footer-bottom');
+        const elements = document.querySelectorAll('.section-title, .about-text, .about-image, .property-item, .service-item, .contact-info, .testimonial-item, .contact-form, .footer-col, .footer-bottom');
         
         elements.forEach(element => {
             const elementPosition = element.getBoundingClientRect().top;
@@ -69,6 +69,14 @@ document.addEventListener('DOMContentLoaded', function() {
     serviceItems.forEach((item, index) => {
         item.style.transitionDelay = `${index * 0.1}s`;
     });
+
+    
+    const testimonialItems = document.querySelectorAll('.testimonial-item');
+    testimonialItems.forEach((item, index) => {
+        item.style.transitionDelay = `${index * 0.1}s`;
+    });
     
 });
+
+
 
