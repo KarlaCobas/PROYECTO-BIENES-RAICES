@@ -7,7 +7,7 @@
         }
         
         body {
-            background-color: #f9f9f7;
+            background-color: #fff;
             color: #333;
         }
         
@@ -279,6 +279,7 @@
             opacity: 0;
             transform: translateX(-50px);
             transition: all 0.8s ease;
+            margin-bottom: 50px;
         }
         
         .about-image.animated {
@@ -293,39 +294,112 @@
         }
 
         /*Guia Section*/
-        .guides {
-            padding: 100px 0;
+        
+        .guide-section {
             background-color: white;
         }
         
         .guide-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
         }
         
         .guide-card {
-            background-color: #f8f8f8;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
+            background: white;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.03);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            border: 2px solid #B8860B;
+            border-radius: 0 50px 0 50px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .guide-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50px;
+            height: 50px;
+            background: #e5930e;
+            clip-path: circle(0% at 100% 0);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
         }
         
         .guide-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.08);
+        }
+        
+        .guide-card:hover:before {
+            clip-path: circle(141.4% at 100% 0);
+        }
+        
+        .guide-card-content {
+            padding: 2.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .guide-card-icon {
+            font-size: 2.5rem;
+            color: #e5930e;
+            margin-bottom: 1.5rem;
+            transition: all 0.4s ease;
+        }
+        
+        .guide-card:hover .guide-card-icon {
+            transform: scale(1.1) rotate(5deg);
         }
         
         .guide-card h3 {
-            color: #556B2F;
-            margin-bottom: 15px;
+            font-size: 1.4rem;
+            margin-bottom: 1.2rem;
+            color: #2c3e50;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .guide-card h3:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: #e5930e;
+            transition: all 0.4s ease;
+        }
+        
+        .guide-card:hover h3:after {
+            width: 50px;
         }
         
         .guide-card p {
-            margin-bottom: 20px;
-            line-height: 1.6;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+        
+        .guide-card .btn {
+            background: transparent;
+            color: #e5930e;
+            border: 1px solid #e5930e;
+            padding: 0.7rem 1.5rem;
+            margin-top: auto;
+            align-self: flex-start;
+        }
+        
+        .guide-card .btn:hover {
+            background: #B8860B;
+            color: white;
         }
         
         /*Propietarios Section*/
@@ -551,93 +625,165 @@
         
         /* Contact Section */
 
+        .contact-title h2{
+            color: #fff;
+        }
+        .contact-section {
+            background-color: #556B2F;
+            position: relative;
+            color: #ffffff;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        
+        .contact-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .contact-container {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .contact-info h3:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #bdc3c7;
+        }
+        
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info-item h4{
+            margin-top: 2rem;
+        }
+        
+        .contact-info-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-size: 1.2rem;
+            color: #bdc3c7;
+        }
+
+        .contact-info-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .contact-info-text p, .contact-info-text a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-info-text a:hover {
+            color: #bdc3c7;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transform: rotate(1deg);
+        }
+        
+        .contact-form:hover {
+            transform: rotate(0deg);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #556B2F;
+            font-weight: 600;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: #bdc3c7;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(243, 156, 18, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: #996515;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            width: auto;
+        }
+        
+        .submit-btn:hover {
+            background: #e5930e;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
         .map{
             width: 70vh;
             height: 50vh;
             margin-top: 15px;
         }
 
-        .contact {
-            padding: 100px 0;
-            background-color: white;
-        }
-        
-        .contact-container {
-            display: flex;
-            gap: 50px;
-        }
-        
-        .contact-info {
-            flex: 1;
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: all 0.8s ease;
-        }
-        
-        .contact-info.animated {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        .contact-info h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: #556B2F;
-        }
-        
-        .info-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-        }
-        
-        .info-item i {
-            font-size: 20px;
-            color: #B8860B;
-            margin-right: 15px;
-            margin-top: 5px;
-        }
-        
-        .contact-form {
-            flex: 1;
-            background-color: #f8f8f8;
-            padding: 30px;
-            border-radius: 4px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: all 0.8s ease;
-        }
-        
-        .contact-form.animated {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-        
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-        
-        .form-group textarea {
-            height: 150px;
-        }
-        
         /* Testimonios Section */
         .testimonials {
             padding: 100px 0;
@@ -724,7 +870,280 @@
         }
         
     /* Metodos de pago */
-    .payment-methods {
+        .payment-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #f9f9f9 0%, #f0f2f5 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .payment-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: white;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+        }
+        
+        .payment-section:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: white;
+            clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.3rem;
+            color: #556B2F;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            position: relative;
+            display: inline-block;
+            margin-top: 50px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #B8860B;
+            margin: 15px auto;
+            transition: all 0.4s ease;
+        }
+        
+        .section-title:hover h2:after {
+            width: 80px;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+        
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .payment-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            border: 1px solid rgba(0,0,0,0.03);
+            padding: 2.5rem;
+            text-align: center;
+            border-radius: 50px 0 50px 0;
+        }
+        
+        .payment-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: #B8860B;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        
+        .payment-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .payment-card:hover:before {
+            transform: scaleX(1);
+        }
+        
+        .payment-icon {
+            width: 80px;
+            height: 80px;
+            background: #fff;
+            border-radius: 50%;
+            border-width: 1px;
+            border-style: solid;
+            border-color: #556B2F;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: #B8860B;
+            transition: all 0.4s ease;
+        }
+        
+        .payment-card:hover .payment-icon {
+            background: #B8860B;
+            color: white;
+            transform: rotateY(180deg);
+        }
+        
+        .payment-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        .payment-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        
+        .payment-features {
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+        
+        .payment-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.8rem;
+        }
+        
+        .payment-feature i {
+            color: #B8860B;
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .payment-feature span {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .payment-btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background: transparent;
+            color: #B8860B;
+            border: 1px solid #B8860B;
+            border-radius: 0;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .payment-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #B8860B;
+            z-index: -1;
+            transition: all 0.4s ease;
+        }
+        
+        .payment-btn:hover {
+            color: white;
+        }
+        
+        .payment-btn:hover:before {
+            left: 0;
+        }
+        
+        .payment-security {
+            margin-top: 5rem;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .security-badge {
+            flex: 1;
+            min-width: 200px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .security-badge i {
+            font-size: 2.5rem;
+            color: #B8860B;
+            margin-right: 1.5rem;
+        }
+        
+        .security-text h3 {
+            font-size: 1.2rem;
+            color: #2c3e50;;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .security-text p {
+            color: #666;
+            font-weight: 300;
+            font-size: 0.9rem;
+        }
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* .payment-methods {
         padding: 80px 0;
         background-color: white;
     }
@@ -769,7 +1188,7 @@
     
     .payment-icon:hover img {
         filter: grayscale(0%);
-    }
+    } */
       
         
         /* Footer */
@@ -917,6 +1336,10 @@
                 margin-top: -25px;
             }
     
+            .submit-btn{
+                width: 100%;
+                margin-bottom: 15px;
+            }
             
             .main-content h1 {
                 font-size: 40px;
@@ -999,14 +1422,23 @@
             margin-top: 15px;
         }
 
-        
-        .payment-icons {
-            gap: 15px;
+        .payment-card {
+            border-radius: 30px 0 30px 0;
         }
-                
-        .payment-icon {
-            width: 80px;
-            height: 65px;
+            
+        .payment-security {
+            flex-direction: column;
+            text-align: center;
+        }
+            
+        .security-badge {
+            flex-direction: column;
+            text-align: center;
+        }
+            
+        .security-badge i {
+            margin-right: 0;
+            margin-bottom: 1rem;
         }
     }
 
