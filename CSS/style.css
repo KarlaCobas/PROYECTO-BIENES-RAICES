@@ -406,7 +406,7 @@
         /*Propietarios Section*/
 
         .owners {
-            padding: 100px 0;
+            padding: 20px 0;
             background-color: #f8f8f8;
         }
         
@@ -452,7 +452,7 @@
                 
         /* Gallery Section */
         .gallery {
-            padding: 100px 0;
+            padding: 20px 0;
             background-color: white;
             overflow: hidden;
         }
