@@ -297,6 +297,7 @@
         
         .guide-section {
             background-color: white;
+            margin-bottom: 20px;
         }
         
         .guide-cards {
@@ -495,7 +496,6 @@
         /* Propiedades Section */
     
         .properties {
-            padding: 100px 0;
             background-color: #f8f8f8;
         }
         
@@ -503,7 +503,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
-            margin-top: 50px;
+            margin-top: 30px;
         }
         
         .property-item {
@@ -625,9 +625,10 @@
         
         /* Contact Section */
 
-        .contact-title h2{
+        #contacto-title{
             color: #fff;
         }
+        
         .contact-section {
             background-color: #556B2F;
             position: relative;
@@ -905,6 +906,7 @@
             margin: 0 auto;
             position: relative;
             z-index: 1;
+            margin-bottom: 10px;
         }
         
         .section-title {
@@ -1114,82 +1116,6 @@
             font-weight: 300;
             font-size: 0.9rem;
         }
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /* .payment-methods {
-        padding: 80px 0;
-        background-color: white;
-    }
-    
-    .payment-methods .container {
-        max-width: 800px;
-        height: 300px;
-    }
-    
-    .payment-icons {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 30px;
-        margin-top: 40px;
-    }
-    
-    .payment-icon {
-        width: 100px;
-        height: 70px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #f8f8f8;
-        border-radius: 8px;
-        padding: 10px;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        transition: all 0.3s ease;
-    }
-    
-    .payment-icon img {
-        max-width: 100%;
-        max-height: 100%;
-        filter: grayscale(30%);
-        transition: filter 0.3s;
-    }
-    
-    .payment-icon:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-    
-    .payment-icon:hover img {
-        filter: grayscale(0%);
-    } */
-      
         
         /* Footer */
         footer {
