@@ -628,7 +628,7 @@
         #contacto-title{
             color: #fff;
         }
-        
+
         .contact-section {
             background-color: #556B2F;
             position: relative;
@@ -787,7 +787,7 @@
 
         /* Testimonios Section */
         .testimonials {
-            padding: 100px 0;
+            padding: 10px 0;
             background-color: #f8f8f8;
         }
         
@@ -795,12 +795,11 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            margin-top: 50px;
         }
         
         .testimonial-item {
             max-width: 250px;
-            margin: 150px auto 0;
+            margin: 100px auto 0;
             background-color: #fff;
             box-shadow: 0 10px 90px #00000024;
             text-align: center;
