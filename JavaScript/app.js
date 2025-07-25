@@ -9,13 +9,11 @@ document.addEventListener('DOMContentLoaded', function() {
         nav.classList.toggle('active');
         navOverlay.classList.toggle('active');
         
-        // Corrección para alinear la X perfectamente
         if (this.classList.contains('active')) {
             this.style.transform = 'translateX(0)';
         }
     });
     
-    // Cerrar menú al hacer clic en enlace o fuera
     function closeMenu() {
         menuToggle.classList.remove('active');
         nav.classList.remove('active');
